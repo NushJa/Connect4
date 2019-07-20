@@ -40,7 +40,7 @@
           </Label>
       <Label fx:id="turnLabel" text="Turn:" GridPane.halignment="CENTER" GridPane.rowIndex="1">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font size="18.0" />
          </font>
          <opaqueInsets>
             <Insets />
@@ -48,6 +48,17 @@
          <padding>
             <Insets left="90.0" top="4.0" />
          </padding>
+         <GridPane.margin>
+            <Insets left="80.0" />
+         </GridPane.margin>
       </Label>
+      <Label fx:id="redCountLabel" alignment="CENTER" contentDisplay="CENTER" text="Red count:" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin></Label>
+      <Label fx:id="yellowCountLabel" alignment="CENTER" contentDisplay="CENTER" text="Yellow count:" textAlignment="CENTER" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="130.0" top="1.0" />
+         </GridPane.margin></Label>
     </children>
 </GridPane>
