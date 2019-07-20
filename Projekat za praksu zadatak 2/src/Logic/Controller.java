@@ -52,9 +52,6 @@ public class Controller implements Initializable {
     public Label playerLabel;
 
     @FXML
-    public Label turnLabel;
-
-    @FXML
     public Label redCountLabel;
 
     @FXML
