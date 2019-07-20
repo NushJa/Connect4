@@ -54,6 +54,16 @@ public class Controller implements Initializable {
     @FXML
     public Label turnLabel;
 
+    @FXML
+    public Label redCountLabel;
+
+    @FXML
+    public Label yellowCountLabel;
+
+
+    private int redCounter = 0;
+    private int yellowCounter = 0;
+
     private boolean isInsertable = true;
 
 
@@ -130,6 +140,14 @@ public class Controller implements Initializable {
                 if (isInsertable) {
                     isInsertable = false;
                     insertDisc(new Disc(isPlayerOneTurn), column);
+                    if(isPlayerOneTurn) {
+                        redCounter++;
+                        redCountLabel.setText("Red count: " + redCounter);
+                    }
+                    else {
+                        yellowCounter++;
+                        yellowCountLabel.setText("Yellow count: " + yellowCounter);
+                    }
                 }
             });
 
@@ -172,7 +190,7 @@ public class Controller implements Initializable {
 
             isPlayerOneTurn = !isPlayerOneTurn;
             playerLabel.setText(isPlayerOneTurn ? PLAYER_ONE : PLAYER_TWO);
-            turnLabel.setTextFill(isPlayerOneTurn ? Color.RED : Color.YELLOW);
+            playerLabel.setTextFill(isPlayerOneTurn ? Color.RED : Color.YELLOW);
         });
         translateTransition.play();
     }
@@ -286,6 +304,8 @@ public class Controller implements Initializable {
 
         isPlayerOneTurn = true;
         playerLabel.setText(PLAYER_ONE);
+        redCounter = 0;
+        yellowCounter = 0;
         createPlayField();
     }
 
